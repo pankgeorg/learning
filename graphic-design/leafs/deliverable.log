@@ -1,0 +1,263 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.1.31)  8 NOV 2020 15:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**deliverable.tex
+(./deliverable.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+
+LaTeX Warning: Unused global option(s):
+    [letter].
+
+(./deliverable.aux)
+\openout1 = `deliverable.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 614.295pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 794.96999pt, 0.0pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=614.295pt
+* \textheight=794.96999pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-109.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 13.
+[1
+
+]
+! Missing number, treated as zero.
+<to be read again> 
+                   w
+l.17 ...t,keepaspectratio]{leaf-ms-whiteboard.png}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   w
+l.17 ...t,keepaspectratio]{leaf-ms-whiteboard.png}
+                                                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   h
+l.17 ...t,keepaspectratio]{leaf-ms-whiteboard.png}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   h
+l.17 ...t,keepaspectratio]{leaf-ms-whiteboard.png}
+                                                  
+? 
+File: leaf-ms-whiteboard.png Graphic file (type bmp)
+<leaf-ms-whiteboard.png>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 18.
+[1]
+! Missing number, treated as zero.
+<to be read again> 
+                   w
+l.21 ...ght,keepaspectratio]{leaf-colorpencil.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   w
+l.21 ...ght,keepaspectratio]{leaf-colorpencil.jpg}
+                                                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   h
+l.21 ...ght,keepaspectratio]{leaf-colorpencil.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   h
+l.21 ...ght,keepaspectratio]{leaf-colorpencil.jpg}
+                                                  
+? 
+File: leaf-colorpencil.jpg Graphic file (type bmp)
+<leaf-colorpencil.jpg>
+[2]
+! Missing number, treated as zero.
+<to be read again> 
+                   w
+l.25 ...ght,keepaspectratio]{leaf-electronics.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   w
+l.25 ...ght,keepaspectratio]{leaf-electronics.jpg}
+                                                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   h
+l.25 ...ght,keepaspectratio]{leaf-electronics.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   h
+l.25 ...ght,keepaspectratio]{leaf-electronics.jpg}
+                                                  
+? 
+File: leaf-electronics.jpg Graphic file (type bmp)
+<leaf-electronics.jpg>
+[3]
+! Missing number, treated as zero.
+<to be read again> 
+                   w
+l.28 ...ight,keepaspectratio]{leaf-gardenwire.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   w
+l.28 ...ight,keepaspectratio]{leaf-gardenwire.jpg}
+                                                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   h
+l.28 ...ight,keepaspectratio]{leaf-gardenwire.jpg}
+                                                  
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   h
+l.28 ...ight,keepaspectratio]{leaf-gardenwire.jpg}
+                                                  
+? X
+ 
+Here is how much of TeX's memory you used:
+ 1076 strings out of 493007
+ 14603 string characters out of 6136719
+ 81614 words of memory out of 5000000
+ 5076 multiletter control sequences out of 15000+600000
+ 7337 words of font info for 32 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 24i,8n,32p,167b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on deliverable.pdf (4 pages).
