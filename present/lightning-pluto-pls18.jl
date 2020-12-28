@@ -434,14 +434,14 @@ md"""
 
 | 🎨 🎮 | Control Panel:
 | :--- | :--- |
-| Avg Temperature | $(@bind temp Slider(0:0.1:30; default=15.8, show_value=true)) |
+| Avg Temperature | $(@bind temp Slider(0:0.1:30; default=15.7, show_value=true)) |
 | Period | $(@bind period Slider(22:0.1:26; default=24, show_value=true)) |
-| Phase | $(@bind phase Slider(0:0.1:24; default=5.6, show_value=true)) |
-| A | $(@bind A Slider(0:0.1:30; default=5.2, show_value=true)) |
+| Phase | $(@bind phase Slider(0:0.1:24; default=8.3, show_value=true)) |
+| A | $(@bind A Slider(0:0.1:30; default=3.2, show_value=true)) |
 | Slow Offset | $(@bind stemp Slider(-10:0.1:10; default=0.3, show_value=true)) |
-| Slow Period | $(@bind speriod Slider(0:365; default=85, show_value=true)) |
-| Slow Phase | $(@bind sphase Slider(0:365; default=62, show_value=true)) |
-| Slow A | $(@bind sA Slider(0:0.1:30; default=5.3, show_value=true)) |
+| Slow Period | $(@bind speriod Slider(0:365; default=89, show_value=true)) |
+| Slow Phase | $(@bind sphase Slider(0:365; default=68, show_value=true)) |
+| Slow A | $(@bind sA Slider(0:0.1:30; default=5.8, show_value=true)) |
 """
 
 # ╔═╡ 9330f564-a26b-4cff-ab89-4bfd87ba5351
@@ -466,7 +466,7 @@ begin
 end
 
 # ╔═╡ 245ebac6-d4fd-476e-8e8b-38cbc89cc2a0
-error = round(abs(sum(model.^2 .-  filter_df[!, "Average of Temperature"].^2)))
+error = round(sum(abs.((model .-  filter_df[!, "Average of Temperature"])).^2 ) )
 
 # ╔═╡ 32977a26-02ac-44c0-b984-0a3c9d92b41f
 md"""
