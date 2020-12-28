@@ -432,17 +432,20 @@ describe(filter_df);  # small statistics
 # ╔═╡ 94e79d8b-3a59-4e47-82a1-7093e9e696a9
 md"""
 
-| 🎨 🎮 | Control Panel:
-| :--- | :--- |
-| Avg Temperature | $(@bind temp Slider(0:0.1:30; default=15.7, show_value=true)) |
-| Period | $(@bind period Slider(22:0.1:26; default=24, show_value=true)) |
-| Phase | $(@bind phase Slider(0:0.1:24; default=8.3, show_value=true)) |
-| A | $(@bind A Slider(0:0.1:30; default=3.2, show_value=true)) |
-| Slow Offset | $(@bind stemp Slider(-10:0.1:10; default=0.3, show_value=true)) |
-| Slow Period | $(@bind speriod Slider(0:365; default=89, show_value=true)) |
-| Slow Phase | $(@bind sphase Slider(0:365; default=68, show_value=true)) |
-| Slow A | $(@bind sA Slider(0:0.1:30; default=5.8, show_value=true)) |
+| 🎨 🎮 | Control Panel | unit | varname | explanation |
+| :--- | :--- | :---: | :---: | :--- |
+| Temperature | $(@bind temp Slider(0:0.1:30; default=15.7, show_value=true)) | °C | temp | (daily) offset |
+| Period | $(@bind period Slider(22:0.1:26; default=24, show_value=true)) | hours | period | (daily) period |
+| Phase | $(@bind phase Slider(0:0.1:24; default=8.3, show_value=true)) | hours | phase | (daily) phase |
+| A | $(@bind A Slider(0:0.1:30; default=3.2, show_value=true)) | °C | A | (daily) var |
+| Temperature * | $(@bind stemp Slider(-10:0.1:10; default=0.3, show_value=true)) | °C | stemp | offset |
+| Period * | $(@bind speriod Slider(0:365; default=89, show_value=true)) | days | speriod | period |
+| Phase * | $(@bind sphase Slider(0:365; default=68, show_value=true)) | days | sphase | phase | 
+| A * | $(@bind sA Slider(0:0.1:30; default=5.8, show_value=true)) | °C | sA | var |
+
+\* Second, monthly component
 """
+
 
 # ╔═╡ 9330f564-a26b-4cff-ab89-4bfd87ba5351
 temp, period, phase, A
@@ -457,9 +460,8 @@ begin
 		size = (600, 200),
 		dpi = 450
 	)
-	model_indices = [2 * pi * i / period - phase for i in 1:l]
 	model_day = temp .+ A / 2 * sin.(2 * pi * (i - phase) / (period) for i in 1:l)
-	model_year = stemp .+ sA / 2 * sin.([2 * pi * (i - 24 * sphase) / (24 * speriod) for i in 1:l])
+	model_year = stemp .+ sA / 2 * sin.(2 * pi * (i - 24 * sphase) / (24 * speriod) for i in 1:l)
 	model = model_day .+ model_year
 	p
 	plot!(filter_df[!, "Created At"], model, labels="Model")
@@ -525,7 +527,7 @@ pluto-input > button.delete_cell > span::after {
  	width: 300px;
 }
 .markdown td bond {
-	width: 240px;
+	width: 200px;
 	display: block
 }
 
@@ -569,9 +571,6 @@ which is probably the [most widely used](https://www.youtube.com/watch?v=WTnwl_s
 - Maintaining a [weather station](https://metabase.pankgeorg.com/public/dashboard/680eb6ec-ebdf-4691-ab73-994f14d4540e??created_at=past0days~)
 - Cooking (but no pastry yet)
 """
-
-# ╔═╡ 5e84f8e4-12a5-4137-bd12-871f1b920dca
-
 
 # ╔═╡ 8b03809a-1c36-472f-b53c-f227e3844a42
 let
@@ -655,9 +654,8 @@ end
 # ╟─32977a26-02ac-44c0-b984-0a3c9d92b41f
 # ╟─fb7fbafb-d107-438c-be9d-048b20dc3564
 # ╟─04c54def-40a1-4423-8c47-1f554bacffbd
-# ╠═a9ea2fe3-04db-41c4-8982-43e4e65de952
+# ╟─a9ea2fe3-04db-41c4-8982-43e4e65de952
 # ╟─dc94c160-b3af-428f-aa16-e0e0d4e75179
 # ╟─21e851a3-bb00-4b77-9705-99b83839e2fe
 # ╟─82862e32-ab19-4766-86be-4f77bdb7fcfb
-# ╠═5e84f8e4-12a5-4137-bd12-871f1b920dca
 # ╟─8b03809a-1c36-472f-b53c-f227e3844a42
