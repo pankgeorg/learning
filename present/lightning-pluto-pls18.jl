@@ -29,7 +29,7 @@ begin
 end
 
 # ╔═╡ e03f0d7b-2ad0-43d2-9a26-058ef91fd8b6
-md"""requires julia1.5.3!"""
+md"""requires julia1.5.3! install from [here](https://julialang.org/downloads/#current_stable_release) and make sure you have [latest source](https://github.com/pankgeorg/learning/blob/main/present/lightning-pluto-pls18.jl) of this notebook if you want run a live copy"""
 
 # ╔═╡ 53d6af8c-487d-11eb-2662-8f34383b413b
 md"""
@@ -290,9 +290,9 @@ begin
 	function show(number::AbstractFloat)
 		"$(number) is an AbstractFloat"
 	end
-	function show(number::BigFloat)
-		"$(number) can be abritrarily large!"
-	end
+	#function show(number::BigFloat)
+	#	"$(number) can be abritrarily large!"
+	#end
 end
 
 # ╔═╡ f75aac94-465d-423b-9746-a3357bf82031
@@ -420,7 +420,7 @@ heavily inspired from [malyvsen](https://github.com/malyvsen)
 # ╔═╡ 63511ed2-fc8c-46ea-8186-505d52f4ad6b
 weather_df = begin
 	file = download("https://gist.githubusercontent.com/pankgeorg/57d38097b56c99a8e4da9b62fd87a3d0/raw/693429a56ea0707381ad94b6b0943d8fcf17ec8d/20201020to20201228_neopsychiko_weather.csv")
-CSV.read(file, DataFrame)
+	CSV.read(file, DataFrame)
 end
 
 # ╔═╡ 54b2b95e-ef97-495c-9937-50663dcb084b
@@ -431,6 +431,7 @@ describe(filter_df);  # small statistics
 
 # ╔═╡ 94e79d8b-3a59-4e47-82a1-7093e9e696a9
 md"""
+Hand pick the values below
 
 | 🎨 🎮 | Control Panel | unit | varname | explanation |
 | :--- | :--- | :---: | :---: | :--- |
@@ -468,7 +469,7 @@ begin
 end
 
 # ╔═╡ 245ebac6-d4fd-476e-8e8b-38cbc89cc2a0
-error = round(sum(abs.((model .-  filter_df[!, "Average of Temperature"])).^2 ) )
+error = round(sum(abs.((model .-  filter_df[!, "Average of Temperature"])).^2 ))
 
 # ╔═╡ 32977a26-02ac-44c0-b984-0a3c9d92b41f
 md"""
