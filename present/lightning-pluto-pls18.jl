@@ -28,6 +28,9 @@ begin
 	md"This is a hidden cell that imports stuff. Julia implicitly returns the value of the last statement in each block, be it a begin, let, function, if or whatever block"
 end
 
+# ╔═╡ e03f0d7b-2ad0-43d2-9a26-058ef91fd8b6
+md"""requires julia1.5.3! install from [here](https://julialang.org/downloads/#current_stable_release) and make sure you have [latest source](https://github.com/pankgeorg/learning/blob/main/present/lightning-pluto-pls18.jl) of this notebook if you want run a live copy"""
+
 # ╔═╡ 53d6af8c-487d-11eb-2662-8f34383b413b
 md"""
 # Julia Programming Language & Pluto.jl
@@ -163,13 +166,13 @@ md"""
 # ╔═╡ ad8116b5-c8a8-4c60-b7f4-35f6dbc21cdf
 function calculatepi(📏)
 	# Add dots to constants to see what happens!
-	Σ = 0
-	🐑 = 0
-	while abs(6. * Σ - π ^ 2) > 📏
-		🐑= 🐑 + 1
-		Σ = Σ + 1 / 🐑 ^ 2
+	Σ = 0.
+	🐑 = 0.
+	while abs(6. * Σ - π ^ 2.) > 📏
+		🐑= 🐑 + 1.
+		Σ = Σ + 1. / 🐑 ^ 2.
 	end
-	√(6 * Σ)
+	√(6. * Σ)
 end
 
 # ╔═╡ de7d263b-c0fc-4255-8edd-41877acef893
@@ -177,14 +180,6 @@ calculatepi
 
 # ╔═╡ a2f20d88-8338-4a20-be0d-228ec56edd4c
 calculatepi(0.000001)
-
-# ╔═╡ 9545f500-bb4c-40d3-a1ea-574bb377277a
-code_typed(calculatepi, Tuple{Float64})
-
-# ╔═╡ 62b3e448-bdd9-4a0b-9e22-a179f54aeec6
-with_terminal() do 
-	code_native(calculatepi, Tuple{Float64})
-end
 
 # ╔═╡ da28e85a-19a4-4b84-9e62-f95f56910618
 md"""
@@ -230,6 +225,14 @@ end
 md"""
 And not caring for types just __*works*__ 
 """
+
+# ╔═╡ 62b3e448-bdd9-4a0b-9e22-a179f54aeec6
+with_terminal() do 
+	code_native(calculatepi, Tuple{Float64})
+end
+
+# ╔═╡ 9545f500-bb4c-40d3-a1ea-574bb377277a
+code_typed(calculatepi, Tuple{Float64})
 
 # ╔═╡ 4c367f62-0a1c-4dc9-83f0-bde497d0cdd8
 md"""
@@ -287,9 +290,9 @@ begin
 	function show(number::AbstractFloat)
 		"$(number) is an AbstractFloat"
 	end
-	# function show(number::BigFloat)
-	# 	"$(number) can be abritrarily large!"
-	# end
+	#function show(number::BigFloat)
+	#	"$(number) can be abritrarily large!"
+	#end
 end
 
 # ╔═╡ f75aac94-465d-423b-9746-a3357bf82031
@@ -417,33 +420,36 @@ heavily inspired from [malyvsen](https://github.com/malyvsen)
 # ╔═╡ 63511ed2-fc8c-46ea-8186-505d52f4ad6b
 weather_df = begin
 	file = download("https://gist.githubusercontent.com/pankgeorg/57d38097b56c99a8e4da9b62fd87a3d0/raw/693429a56ea0707381ad94b6b0943d8fcf17ec8d/20201020to20201228_neopsychiko_weather.csv")
-CSV.read(file, DataFrame)
+	CSV.read(file, DataFrame)
 end
 
 # ╔═╡ 54b2b95e-ef97-495c-9937-50663dcb084b
 filter_df = weather_df;
 
+# ╔═╡ 11df8461-9a1b-4a8d-a13f-641f9c9e223d
+describe(filter_df);  # small statistics
+
 # ╔═╡ 94e79d8b-3a59-4e47-82a1-7093e9e696a9
 md"""
+Hand pick the values below
 
-| 🎨 🎮 | Control Panel:
-| :--- | :--- |
-| Avg Temperature | $(@bind temp Slider(0:0.1:30; default=15.8, show_value=true)) |
-| Period | $(@bind period Slider(22:0.1:26; default=24, show_value=true)) |
-| Phase | $(@bind phase Slider(0:0.1:24; default=5.2, show_value=true)) |
-| A | $(@bind A Slider(0:0.1:30; default=5.2, show_value=true)) |
-| Slow Offset | $(@bind stemp Slider(-10:0.1:10; default=0.3, show_value=true)) |
-| Slow Period | $(@bind speriod Slider(0:365; default=85, show_value=true)) |
-| Slow Phase | $(@bind sphase Slider(0:365; default=62, show_value=true)) |
-| Slow A | $(@bind sA Slider(0:0.1:30; default=5.3, show_value=true)) |
+| 🎨 🎮 | Control Panel | unit | varname | explanation |
+| :--- | :--- | :---: | :---: | :--- |
+| Temperature | $(@bind temp Slider(0:0.1:30; default=15.7, show_value=true)) | °C | temp | (daily) offset |
+| Period | $(@bind period Slider(22:0.1:26; default=24, show_value=true)) | hours | period | (daily) period |
+| Phase | $(@bind phase Slider(0:0.1:24; default=8.3, show_value=true)) | hours | phase | (daily) phase |
+| A | $(@bind A Slider(0:0.1:30; default=3.2, show_value=true)) | °C | A | (daily) var |
+| Temperature * | $(@bind stemp Slider(-10:0.1:10; default=0.3, show_value=true)) | °C | stemp | offset |
+| Period * | $(@bind speriod Slider(0:365; default=89, show_value=true)) | days | speriod | period |
+| Phase * | $(@bind sphase Slider(0:365; default=68, show_value=true)) | days | sphase | phase | 
+| A * | $(@bind sA Slider(0:0.1:30; default=5.8, show_value=true)) | °C | sA | var |
 
+\* Second, monthly component
 """
+
 
 # ╔═╡ 9330f564-a26b-4cff-ab89-4bfd87ba5351
 temp, period, phase, A
-
-# ╔═╡ 11df8461-9a1b-4a8d-a13f-641f9c9e223d
-describe(filter_df);  # small statistics
 
 # ╔═╡ c6dc73f6-85d0-411f-a521-2df29d5b35e6
 begin
@@ -451,17 +457,19 @@ begin
 	p = plot(
 		filter_df[!, "Created At"],
 		filter_df[!, "Average of Temperature"],
-		labels="Temperature"
+		labels="Temperature",
+		size = (600, 200),
+		dpi = 450
 	)
-	model_indices = [2 * pi * i / period - phase for i in 1:l]
 	model_day = temp .+ A / 2 * sin.(2 * pi * (i - phase) / (period) for i in 1:l)
-	model_year = stemp .+ sA / 2 * sin.([2 * pi * (i - 24 * sphase) / (24 * speriod) for i in 1:l])
+	model_year = stemp .+ sA / 2 * sin.(2 * pi * (i - 24 * sphase) / (24 * speriod) for i in 1:l)
 	model = model_day .+ model_year
+	p
 	plot!(filter_df[!, "Created At"], model, labels="Model")
 end
 
 # ╔═╡ 245ebac6-d4fd-476e-8e8b-38cbc89cc2a0
-abs(sum(model.^2 .-  filter_df[!, "Average of Temperature"].^2))
+error = round(sum(abs.((model .-  filter_df[!, "Average of Temperature"])).^2 ))
 
 # ╔═╡ 32977a26-02ac-44c0-b984-0a3c9d92b41f
 md"""
@@ -520,7 +528,7 @@ pluto-input > button.delete_cell > span::after {
  	width: 300px;
 }
 .markdown td bond {
-	width: 240px;
+	width: 200px;
 	display: block
 }
 
@@ -573,11 +581,13 @@ let
 	Pkg.add("CSV")
 	Pkg.add("Plots")
 	Pkg.add("DataFrames")
+	Pkg.add("PlutoUI")
     import DarkMode
     DarkMode.Toolbox(theme="lucario", ligatures=true)
 end
 
 # ╔═╡ Cell order:
+# ╟─e03f0d7b-2ad0-43d2-9a26-058ef91fd8b6
 # ╟─53d6af8c-487d-11eb-2662-8f34383b413b
 # ╟─9f7462dd-b97c-46de-894c-01afee404d33
 # ╟─fb0a072d-53b5-4bbb-a6ed-6c808ee28729
@@ -607,8 +617,6 @@ end
 # ╠═52d61ca8-54e5-46bd-9683-203f3c8e3744
 # ╠═a2f20d88-8338-4a20-be0d-228ec56edd4c
 # ╠═ad8116b5-c8a8-4c60-b7f4-35f6dbc21cdf
-# ╠═9545f500-bb4c-40d3-a1ea-574bb377277a
-# ╠═62b3e448-bdd9-4a0b-9e22-a179f54aeec6
 # ╟─da28e85a-19a4-4b84-9e62-f95f56910618
 # ╠═6b1a2152-34a8-4ae5-96ab-fc16fbfd0302
 # ╟─7c68475d-a5e9-48ef-b74e-d1cad43ffb3b
@@ -616,6 +624,8 @@ end
 # ╟─e56f9f56-275d-42d9-90c9-973ed23e15d0
 # ╠═cd40c360-e6e5-41c9-9683-2d0c5f0ac38f
 # ╟─d3152411-3848-4f1b-aac3-13acc79d4a88
+# ╠═62b3e448-bdd9-4a0b-9e22-a179f54aeec6
+# ╠═9545f500-bb4c-40d3-a1ea-574bb377277a
 # ╟─4c367f62-0a1c-4dc9-83f0-bde497d0cdd8
 # ╠═d6151f91-0311-4a89-b315-eee9e5d41eb0
 # ╠═cf05995f-6954-490c-b1af-fe25d1e668c2
@@ -629,17 +639,17 @@ end
 # ╠═ba41cede-7dde-47a8-bfa1-5370634390dc
 # ╟─80d45ef8-ff90-4781-92db-439569526e0b
 # ╟─8ffd70a3-8e5b-4100-91a0-ddc7698a5fd6
-# ╠═d6b800dc-a386-4de2-acc0-6c32c0dd5261
-# ╠═99b645ec-d3ca-4303-a51e-134f11e659d0
+# ╟─d6b800dc-a386-4de2-acc0-6c32c0dd5261
+# ╟─99b645ec-d3ca-4303-a51e-134f11e659d0
 # ╟─c2a31489-3315-4cd7-83da-b4b834eb0d1d
 # ╟─9dfabf04-6301-4376-ab51-bee89bce6672
 # ╠═62d2aac2-bb90-4c62-a01c-a12f024fe374
 # ╠═63511ed2-fc8c-46ea-8186-505d52f4ad6b
 # ╠═1d3176d2-864f-417a-b068-dd876c9fa8ac
 # ╠═54b2b95e-ef97-495c-9937-50663dcb084b
-# ╟─94e79d8b-3a59-4e47-82a1-7093e9e696a9
-# ╠═9330f564-a26b-4cff-ab89-4bfd87ba5351
 # ╠═11df8461-9a1b-4a8d-a13f-641f9c9e223d
+# ╠═9330f564-a26b-4cff-ab89-4bfd87ba5351
+# ╟─94e79d8b-3a59-4e47-82a1-7093e9e696a9
 # ╠═245ebac6-d4fd-476e-8e8b-38cbc89cc2a0
 # ╠═c6dc73f6-85d0-411f-a521-2df29d5b35e6
 # ╟─32977a26-02ac-44c0-b984-0a3c9d92b41f
@@ -649,4 +659,4 @@ end
 # ╟─dc94c160-b3af-428f-aa16-e0e0d4e75179
 # ╟─21e851a3-bb00-4b77-9705-99b83839e2fe
 # ╟─82862e32-ab19-4766-86be-4f77bdb7fcfb
-# ╠═8b03809a-1c36-472f-b53c-f227e3844a42
+# ╟─8b03809a-1c36-472f-b53c-f227e3844a42
